@@ -1,0 +1,37 @@
+name: Code Quality Scan
+
+on:
+  push:
+    branches: ["develop"]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: ["develop"]
+
+jobs:
+  code-quality-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.18.0
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm install
+      - name: Check formatting
+        run: npm run prettier
+      - name: Test Code coverage
+        run: npm run test
+      - name: Upload coverage report to Codacy
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: "coverage/clover.xml"
