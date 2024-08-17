@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "jest": "^27.5.1",
-    "prettier": "^3.3.3"
+    "prettier": "2.8.8"
   },
   "jest": {
     "coveragePathIgnorePatterns": [
