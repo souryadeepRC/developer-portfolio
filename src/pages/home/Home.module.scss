@@ -1,0 +1,21 @@
+.home__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+  .display-image__container {
+      width: 200px;
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+  }
+  .banner__container {
+      flex: 2;
+    .display__quote {
+        font-style: italic;
+    }
+  }
+}
