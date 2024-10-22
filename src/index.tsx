@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { rootStore } from "src/store/root-store";
 import "./index.scss";
 import routes from "./routes";
 const root = ReactDOM.createRoot(
@@ -9,6 +11,8 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter(routes);
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={rootStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

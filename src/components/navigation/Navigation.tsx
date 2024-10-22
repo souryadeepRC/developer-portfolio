@@ -17,13 +17,13 @@ const NavigationPaths: NavigationType[] = [
     displayName: "TEST",
   },
 ];
-const Navigation: React.FC<any> = ({ appTheme, setAppTheme }) => {
+const Navigation: React.FC = () => {
   return (
     <section className={styles.navigation__container}>
       <section className={styles["display-image__container"]}>
         <img src={userImage} alt="Souryadeep Roy Chowdhury" loading="lazy" />
         <span>Souryadeep</span>
-        <ToggleTheme appTheme={appTheme} setAppTheme={setAppTheme} />
+        <ToggleTheme />
       </section>
       <nav className={styles.navigation__list}>
         <ul>
