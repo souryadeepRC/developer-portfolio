@@ -1,0 +1,14 @@
+@import "src/styles/theme-variables.scss";
+
+// ============= Font ==========
+$font-weight-700: 700;
+/* ========== Media Resolution =============== */
+$mobile-max-width: 769px;
+$tablet-max-width: 1024px;
+$small-mobile-max-width: 460px;
+
+/* ============== Extend/Inheritance =====================*/
+.error {
+  border: 1px solid red;
+  color: red;
+}

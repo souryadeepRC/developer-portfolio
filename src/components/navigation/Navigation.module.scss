@@ -1,5 +1,7 @@
+@import "src/styles/variables.scss";
 .navigation__container {
   display: flex;
+  background-color: var(--primary-bg-color);
   justify-content: space-between;
   padding: 10px 20px;
   .display-image__container {
